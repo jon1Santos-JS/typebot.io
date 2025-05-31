@@ -12,6 +12,8 @@ import { resumeWhatsAppFlow } from "@typebot.io/whatsapp/resumeWhatsAppFlow";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  console.log('requisition ', req);
+  console.log('response ', res);
   if (req.method === "POST") {
     if (!env.NEXT_PUBLIC_PARTYKIT_HOST) return notFound(res);
     const user = await authenticateUser(req);
